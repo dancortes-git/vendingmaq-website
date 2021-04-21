@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm ci --silent
-      - run: npm install -g gatsby-cli
+      - run: sudo npm install -g gatsby-cli
       - run: npm run build
 
       - run: aws s3 sync public s3://${{ secrets.AWS_S3_BUCKET_NAME }}
